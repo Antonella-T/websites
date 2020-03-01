@@ -1,0 +1,318 @@
+/*global styles*/
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: verdana;
+  background-color: #ffffcf;
+  background-image: url(../images/navbar_and_logo/menubar_bg.gif);
+  background-repeat: repeat-x;
+}
+
+h1 {
+  font-family: georgia;
+  color: #999966;
+  font-size: 1em;
+  text-transform: capitalize;
+ }
+
+h2 {
+  font-family: georgia;
+  font-size: 0.8em;
+  text-transform: capitalize;
+  color: #6e6e3b;
+  text-align: center;
+  padding: 20px 0px 10px;
+}
+
+h3 {
+  font-size: 0.7em;
+  text-transform: capitalize;
+  color: #990000;
+  text-align: center;
+  border-top: 1px dashed black;
+  padding-top: 20px;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+.logo {
+  position: fixed;
+  top: 65px;
+}
+
+a {
+  color: #990000;
+  text-transform: capitalize;
+  font-size: 0.7em;
+}
+
+
+
+/*container sizes*/
+.small-container {
+  width: 250px;
+  margin: auto;
+  min-height: 370px;
+}
+
+.medium-container {
+  width: 460px;
+  margin: auto;
+  min-height: 370px;
+
+}
+
+.medium-container p {
+	padding-left: 20px;
+}
+
+.medium-container .p-tag {
+	padding-left: 0;
+}
+
+.large-container {
+  width: 600px;
+  min-height: 58px;
+  margin: auto;
+}
+
+.small-container,
+.medium-container,
+.large-container {
+	padding: 15px 0;
+}
+
+.small-container a ,
+.medium-container a {
+  font-family: georgia;
+  font-size: 1em;
+  text-transform: capitalize;
+  color: #990000;
+  background-image: url(../images/formbtm-arrow/red_arrow.gif);
+  background-repeat: no-repeat;
+  background-position: 0px 2px;
+  padding-left: 10px;
+}
+
+
+
+/*  component .sub-navbar & footer navabar*/
+.sub-navbar {
+  background-color: #999966;
+  border-radius: 4px;
+  border: 1px solid black;
+  border-top: none;
+  width: 635px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.footer .navbar {
+  text-align: center;
+  margin: 0;
+}
+
+.sub-navbar ul,
+.footer .navbar ul {
+  margin: 0;
+  padding: 4px;
+  list-style-type: none;
+}
+
+.sub-navbar li,
+.footer .navbar li {
+  display: inline-block;
+  border-right: 1px solid black;
+}
+
+.sub-navbar li:last-of-type,
+.footer .navbar li:last-of-type {
+  border-right: none;
+}
+
+.sub-navbar a,
+.footer .navbar a {
+  padding: 0px 5px;
+  display: inline-block;
+}
+
+
+/*sub-navbar and footer hover*/
+.sub-navbar a:hover {
+	color: black;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.footer .navbar a:hover {
+	color: #6e6e3b;
+	text-decoration: none;
+}
+
+
+
+
+/*header*/
+.nav-bar {
+  text-align: center;
+  height: 58px;
+}
+
+/* .a-active (sub-navbar a) */
+.a-active {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+
+/*  component .cards */
+.cards {
+  display: inline-block;
+  padding: 10px;
+  vertical-align: text-top;
+  text-align: center;
+}
+
+.cards p {
+  text-align: left;
+}
+
+.large-container .cards {
+  width: 29%;
+}
+
+
+
+/* start of component footer*/
+.footer {
+  background-color: #cccc99;
+  padding: 5px;
+}
+
+.footer a {
+  font-weight: 600;
+}
+
+.footer .link-active {
+  color: #6e6e3b;
+  text-decoration: none;
+}
+
+
+
+/*glossary*/
+.glossary a {
+	background-image: none;
+	padding: 0 3px;
+}
+
+.glossary p {
+	padding-left: 0;
+}
+
+.glossary h1 {
+	text-align: center;
+}
+
+
+/*links*/
+.links ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.links a {
+	text-transform: lowercase;
+	display: inline-block;
+    padding-bottom: 10px;
+}
+
+.links h1 {
+	text-align: center;
+}
+
+
+
+
+/* component gallery */
+.medium-container .gallery {
+  background-color: #cccc99;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 4px;
+}
+
+.large-container .gallery {
+	background-color: #cccc99;
+	margin: 0 100px 20px 0;
+    padding-bottom: 4px;
+}
+
+.gallery h1 {
+  font-size: 1.3em;
+  color: black;
+}
+
+.gallery p {
+	margin: 0;
+}
+
+.gallery-section span {
+	display: block;
+}
+
+.gallery-section a {
+  display: inline-block;
+  margin: 15px;
+  padding-left: 0;
+}
+
+.gallery-section {
+  text-align: center;
+}
+
+.photo-gallery a {
+	border-right: 1px solid black;
+	padding-right: 3px;
+}
+
+.photo-gallery a:last-of-type {
+	border-right: none;
+}
+
+
+
+/* component form */
+.form-element {
+  padding: 5px 0;
+}
+
+.form-element label {
+  text-align: right;
+  width: 118px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: .8em;
+}
+
+.form-element input,
+.form-element textarea {
+  background-color: #cccc99;
+  width: 330px;
+}
+
+.form-actions {
+  text-align: right;
+}
+
+
+
+
+
+
+
