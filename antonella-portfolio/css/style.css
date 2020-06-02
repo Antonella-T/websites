@@ -1,0 +1,669 @@
+/* GLOBAL styles */
+* {
+    box-sizing: border-box;
+    /* Customized scroll bar for firefox. */
+    scrollbar-color: #8f0c43 rgba(255, 186, 215) ;
+}
+
+/* These are styles to costumize the scroll bar */
+*::-webkit-scrollbar-track {
+    background-color: rgba(255, 186, 215, 0.43);
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #8f0c43;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: roboto, sans-serif;
+    height: 100vh;
+    display: flex;
+    /*
+     * I use sizes for layout sections in vw or vh units, and when scrollbar is visible it breaks some layout parts.
+     * I'm calculating the width of the body adding the scrollbar space to fix this.
+     */
+    width: calc(100% + (100vw - 100%));
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1900px;
+    margin: auto;
+    padding: 6vw;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Rasa', serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    background-color: #8f0c43;
+    border: none;
+    padding: 6px 25px;
+    color: white;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+button:hover {
+    background-color: #ffbad7;
+    color: #8f0c43;
+}
+
+
+
+/* FLIP-BEHAIVORS start */
+.flip-card {
+    position: relative;
+    width: 100%;
+    transition: transform 0.9s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.flip-card.flip-inline {
+    width: auto;
+}
+
+.flip-card .card-front,
+.flip-card .card-back {
+    transform: rotateX(0deg); /* To fix firefox mirror issues */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    backface-visibility: hidden;
+}
+/* FLIP BEHAIVOR end */
+
+
+
+/* BOX start */
+.box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.box:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+
+.box h2,
+.box span,
+.mini-nav .box a,
+.navigation .box a {
+    align-items: center;
+}
+
+.box .content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.box .padding-content {
+    padding: 6%;
+}
+
+.box .content section {
+    overflow: auto;
+    padding-right: 25px;
+}
+/* BOX end */
+
+
+
+/* HEADER start */
+header {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+header h1 {
+    flex-grow: 1;
+    margin: 5px 0 0px;
+}
+
+header i {
+    margin: 13px 0 15px;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-basis: 100%;
+}
+
+header h1,
+header h1 a {
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+}
+
+header h1 span:last-of-type {
+    -webkit-text-fill-color: #FFBAD7;
+}
+
+header h1 a:hover {
+    -webkit-text-fill-color: #FFBAD7;
+}
+
+header .welcome-msg {
+    width: 330px;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+}
+/* HEADER end */
+
+
+
+/* HELPERS start */
+.bg-pink-100 {
+    background-color: #ff1879;
+}
+
+.bg-pink-75 {
+    background-color: #FF5DA1;
+}
+
+.bg-pink-50 {
+    background-color: #FFBAD7;
+}
+
+.bg-pink-25 {
+    background-color: #FFE8F2;
+}
+
+.text-dark-red {
+    color: #8F0C43;
+}
+
+.text-white {
+    color: white;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.display-none {
+    display: none;
+}
+
+.link-dark {
+    color: #8F0C43;
+    font-weight: 600;
+}
+
+.link-dark:hover {
+    color: white;
+}
+
+.link-light {
+    color: white;
+    font-weight: 600;
+}
+
+.link-light:hover {
+    color: #8f0c43;
+}
+/* HELPERS end */
+
+
+
+/* FOOTER start */
+footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+    align-items: center;
+}
+
+footer a {
+    margin: 17px 5px 17px 0;
+}
+
+footer span,
+footer a,
+.fa {
+    color: #8F0C43;
+}
+/* FOOTER end */
+
+
+
+/* MAIN HEADER start */
+header .hamburger-menu.fa {
+    font-size: x-large;
+    cursor: pointer;
+}
+
+header.show-menu {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 6vw;
+    background-color: #ffffffdb;
+}
+/* MAIN HEADER end */
+
+
+
+/* NAVIGATION start */
+.navigation {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    line-height: 2rem;
+    font-family: 'Rasa', serif;
+    font-weight: 600;
+}
+
+nav.navigation {
+    display: none;
+}
+
+.navigation .box {
+    height: 44vw;
+    width: 44vw;
+}
+
+.navigation a.content {
+    padding: 0;
+}
+
+.navigation a.content * {
+    margin: 0;
+    color: black;
+    font-size: 2rem;
+    padding: 0 10%;
+}
+
+.navigation.mini-nav a.content * {
+    font-size: 1.2rem;
+}
+
+.navigation a.content .card-back {
+    color: #8f0c43;
+}
+
+/* applies when navigation is in site header */
+.show-menu .navigation {
+    display: flex;
+}
+
+.show-menu .navigation h2,
+.show-menu .navigation span.card-back {
+    font-size: 2rem;
+}
+/* NAVIGATION end */
+
+
+
+/* HOME SECTION */
+.home-section h1 {
+    flex-grow: 0;
+    margin: 0;
+}
+
+.home-section > section:first-child:after {
+    padding-bottom: 230px;
+}
+
+.home-section h1 span {
+    display: inline-block;
+}
+
+.home-section .box .content.navigation {
+    flex-direction: row;
+}
+
+.home-section .box .content a {
+    font-size: 1.6rem;
+}
+
+
+
+/* ABOUT-ME */
+.about-bg-square {
+    background-image: url(../images/about-mobile.jpg);
+    background-size: contain;
+}
+
+.about-me a:hover {
+    text-decoration: underline;
+    color: #8F0C43;
+}
+
+
+/* WORK */
+.work-bg-square {
+    background-image: url(../images/work-mobile.jpg);
+    background-size: contain;
+}
+
+video {
+    display: none;
+}
+
+
+/* BLOG */
+.blog-bg-square {
+    background-image: url(../images/blog-desktop.jpg);
+    background-size: contain;
+}
+
+.fa-external-link {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+
+/* CONTACT start */
+.contact-bg-square {
+    background-image: url(../images/contact-mobile.jpg);
+    background-size: contain;
+}
+
+form .form-elements {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+form input,
+form textarea {
+    background-color: transparent;
+    border: 1px solid #8f0c43;
+    padding: 6px;
+    outline: none;
+}
+
+form .form-action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fa-github-square,
+.fa-linkedin-square,
+.fa-envelope {
+    font-size: 1.5rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px 23px;
+}
+
+.contact-links a {
+    margin-left: 20px;
+}
+
+
+
+/*
+ * Landscape desktop design
+ * I want to detect if the user screen is in landscape or portrait to switch the box units 
+ * because the box size depends on the view available space.
+ */
+@media all and (orientation: landscape) and (min-width: 769px) {
+    .box {
+        width: 76vh;
+        max-width: 46vw;
+        max-height: 46vw;
+        height: 76vh;
+    }
+
+    .navigation .box {
+        height: 38vh;
+        width: 38vh;
+        max-width: 23vw;
+        max-height: 23vw;
+    }
+
+    header {
+        width: 150vh;
+        align-items: flex-end;
+        min-height: 15vh;
+    }
+
+    footer {
+        width: 150vh;
+        min-height: 9vh;
+    }
+
+    .home-section {
+        padding-top: 15vh;
+    }
+
+}
+
+
+
+/* I have implemented this media query because I want to desable animation in mobile devices due the inhability of hover. */
+@media (hover: hover) {
+    /* flip right */
+    .flip-card.flip-right:hover {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card .card-back.flip-right {
+        transform: rotateY(180deg);
+    }
+
+    /* flip left */
+    .flip-card.flip-left:hover {
+        transform: rotateY(-180deg);
+    }
+
+    .flip-card .card-back.flip-left {
+        transform: rotateY(-180deg);
+    }
+
+    /* flip up */
+    .flip-card.flip-up:hover {
+        transform: rotateX(180deg);
+    }
+
+    .flip-card .card-back.flip-up {
+        transform: rotateX(180deg);
+    }
+
+    /* flip down */
+    .flip-card.flip-down:hover {
+        transform: rotateX(-180deg);
+    }
+
+    .flip-card .card-back.flip-down {
+        transform: rotateX(-180deg);
+    }
+
+    .flip-gallery > *:not(.card-back),
+    .flip-gallery > *:not(.card-front) {
+        display: none;
+    }
+
+    .flip-gallery > .card-back,
+    .flip-gallery > .card-front {
+        display: block;
+    }
+
+    video {
+        display: block;
+    }
+}
+
+
+
+/* Desktop styles */
+@media screen and (min-width: 769px) {
+    /* Global */
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 4vw;
+        height: 100vh;
+    }
+
+    main {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: center;
+        position: relative;
+    }
+
+    main h2 a {
+        font-size: 1.4rem;
+    }
+
+    /* HELPERS */
+    .hide-content {
+        display: none !important;
+    }
+
+    .box .padding-content {
+        padding: 8% 11%;
+    }
+
+    /* HEADER */
+    header .box,
+    header .hamburger-menu.fa {
+        display: none;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    header h1 span:first-of-type {
+        font-size: 3.5rem;
+    }
+
+    header .welcome-msg {
+        line-height: 2.2rem;
+        font-size: 1.5rem;
+    }
+
+    /* HOME */
+    .home-section h1 {
+        font-size: 4.5rem;
+        line-height: 4.2rem;
+    }
+
+    .home-section .box .content {
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    /* ABOUT */
+    .about-bg-square {
+        background-image: url(../images/about-desktop.jpg);
+    }
+
+    /* WORK */
+    .work-bg-square {
+        background-image: url(../images/work-desktop.jpg);
+    }
+
+    /* BLOG */
+    .blog-bg-square {
+        background-image: url(../images/blog-desktop.jpg);
+    }
+
+    /* CONTACT */
+    .contact-bg-square {
+        background-image: url(../images/contact-desktop.jpg);
+    }
+
+    /* MINI-NAV */
+    .mini-nav {
+        position: absolute;
+        z-index: 4;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        display: flex !important;
+        width: 10vh;
+        margin: auto;
+        height: 10vh;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.48);
+        background-color: rgba(255, 255, 255, 0.50);
+    }
+
+    .mini-nav .box {
+        height: 5vh;
+        width: 5vh;
+    }
+}
+
+
+
+/* To work in IE11 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+    /* Put your IE-only styles here. Works for IS 10 & IE 11*/
+    .box .content {
+        display: block;
+        position: relative;
+    }
+    
+    .box .content.navigation {
+        display: flex;
+    }
+
+    .box .content section {
+        max-height: 75%;
+    }
+
+    video {
+        display: none;
+    }
+}

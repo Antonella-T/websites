@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hello, if you have any inquiry or any project that you think I can help you with, do not hesitate to get in touch. I would love to work with you!"
+    />
+    <meta
+      name="keywords"
+      content="Front-end-developer, Frameworks, Linkedin, GitHub, Dublin-Ireland"
+    />
+    <meta name="author" content="Antonella Testa" />
+    <title>Contact - Antonella Testa</title>
+    <!-- LINKS -->
+    <link rel="icon" type="image/png" href="images/square-tab.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rasa:400,700|Roboto:400,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- SCRIPTS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/submit-form.js" defer></script>
+  </head>
+
+  <body>
+    <!-- GENERAL CONTAINER start -->
+    <div class="container">
+      <!-- HEADER start -->
+      <header>
+        <h1><a href="/">Antonella Testa.</a></h1>
+
+        <i class="fa fa-bars hamburger-menu" aria-hidden="true"></i>
+
+        <!-- NAVIGATION start -->
+        <nav class="navigation">
+          <!-- ABOUT nav btn start -->
+          <div class="box">
+            <a href="about.html" class="content flip-card flip-right">
+              <h2 class="card-front bg-pink-100">
+                Who I am?
+              </h2>
+              <span class="card-back flip-right">
+                Who I am?
+              </span>
+            </a>
+          </div>
+          <!-- ABOUT nav btn end -->
+
+          <!-- WORK nav btn start -->
+          <div class="box">
+            <a href="work.html" class="content flip-card flip-down">
+              <h2 class="card-front bg-pink-75">
+                What I do?
+              </h2>
+              <span class="card-back flip-down">
+                What I do?
+              </span>
+            </a>
+          </div>
+          <!-- WORK nav btn end -->
+
+          <!-- BLOG nav btn start -->
+          <div class="box">
+            <a href="blog.html" class="content flip-card flip-up">
+              <h2 class="card-front bg-pink-50">
+                My Blog
+              </h2>
+              <span class="card-back flip-up">
+                My Blog
+              </span>
+            </a>
+          </div>
+          <!-- BLOG nav btn end -->
+
+          <!-- CONTACT nav btn start -->
+          <div class="box">
+            <a href="contact.html" class="content flip-card flip-left">
+              <h2 class="card-front bg-pink-25">
+                Get in touch
+              </h2>
+              <span class="card-back flip-left">
+                Get in touch
+              </span>
+            </a>
+          </div>
+          <!-- CONTACT nav btn end -->
+          <!-- NAVIGATION end -->
+        </nav>
+      </header>
+      <!-- HEADER end -->
+
+      <!-- MAIN start -->
+      <main>
+        <section class="box">
+          <div class="content contact-bg-square"></div>
+        </section>
+
+        <!-- MINI-NAVIGATION start-->
+        <nav class="navigation mini-nav">
+          <!-- ABOUT nav btn start -->
+          <div class="box">
+            <a href="about.html" class="content flip-card flip-right">
+              <span class="card-front bg-pink-100" title="About me">
+                A
+              </span>
+              <span class="card-back flip-right" title="About me">
+                A
+              </span>
+            </a>
+          </div>
+          <!-- ABOUT nav btn end -->
+
+          <!-- WORK nav btn start -->
+          <div class="box">
+            <a href="work.html" class="content flip-card flip-down">
+              <span class="card-front bg-pink-75" title="What I do">
+                W
+              </span>
+              <span class="card-back flip-down" title="What I do">
+                W
+              </span>
+            </a>
+          </div>
+          <!-- WORK nav btn end -->
+
+          <!-- BLOG nav btn start -->
+          <div class="box">
+            <a href="blog.html" class="content flip-card flip-up">
+              <span class="card-front bg-pink-50" title="Blog">
+                B
+              </span>
+              <span class="card-back flip-up" title="Blog">
+                B
+              </span>
+            </a>
+          </div>
+          <!-- BLOG nav btn end -->
+
+          <!-- CONTACT empty square -->
+          <div class="box">
+            <span class="content"></span>
+          </div>
+          <!-- CONTACT empty square -->
+        </nav>
+        <!-- MINI-NAVIGATION end-->
+
+        <section class="box">
+          <div class="padding-content content text-dark-red bg-pink-25">
+            <h2>Get in touch</h2>
+            <section>
+              <form>
+                <div class="form-elements">
+                  <label for="name">Name*</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+
+                <div class="form-elements">
+                  <label for="email">Email*</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+
+                <div class="form-elements">
+                  <label for="message">Message*</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    cols="20"
+                    rows="8"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="form-action">
+                  <button type="submit">Send</button>
+                </div>
+              </form>
+
+              <div class="success-message display-none">
+                <h3>Your message was sent!</h3>
+                <p>
+                  Thank you for getting in touch, I will be reaching out to you
+                  soon.
+                </p>
+                <p>
+                  For more information please find below links to my social
+                  networks.
+                </p>
+              </div>
+            </section>
+
+            <div class="contact-links">
+              <a
+                href="mailto:antonellamtesta@gmail.com"
+                target="_blank"
+                title="Email me!"
+                ><i class="fa fa-envelope" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/antonella-testa/"
+                target="_blank"
+                title="Find me in Linkedin"
+                ><i class="fa fa-linkedin-square" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://github.com/Antonella-T"
+                target="_blank"
+                title="Find me in GitHub"
+                ><i class="fa fa-github-square" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- MAIN end -->
+
+      <!-- FOOTER start -->
+      <footer>
+        <p>&copy; copyright <span>Antonella Testa</span> 2020</p>
+        <a href="cv-antonella.pdf" target="_blank" title="Download my CV"
+          >Get my CV <i class="fa fa-file-pdf-o" aria-hidden="true"></i
+        ></a>
+      </footer>
+      <!-- FOOTER end -->
+    </div>
+    <!-- GENERAL CONTAINER end -->
+  </body>
+</html>
